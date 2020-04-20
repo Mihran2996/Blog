@@ -30,7 +30,7 @@ public class BlogMain implements Comads, ComandLogin {
             switch (comand) {
                 case LOGIN:
                     login();
-                    while (bool) {
+                    Outer1:while (bool) {
                         comands();
                         int com;
                         try {
@@ -61,8 +61,9 @@ public class BlogMain implements Comads, ComandLogin {
                             default:
                                 System.out.println("Wrong comand!");
                         }
-                        break;
+                        continue  Outer1;
                     }
+                    break ;
                 case REGISTR:
                     registr();
                     break;
@@ -153,7 +154,6 @@ public class BlogMain implements Comads, ComandLogin {
         if (userStorage.empty()) {
             System.out.println("User is empty");
             registr();
-            comandLogin();
             return;
         } else {
             System.out.println("Please input email/password");
